@@ -1,0 +1,36 @@
+{
+  "name": "as-helper",
+  "version": "1.0.0",
+  "description": "",
+  "module": "index.ts",
+  "types": "index.ts",
+  "main": "index.ts",
+  "ascMain": "index.ts",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc --bindings esm assembly/index.ts --target debug",
+    "asbuild:release": "asc --bindings esm assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdonmez/as-helper.git"
+  },
+  "author": "Ramazan Dönmez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdonmez/as-helper/issues"
+  },
+  "homepage": "https://github.com/rdonmez/as-helper#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.25.1"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}
