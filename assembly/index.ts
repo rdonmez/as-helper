@@ -5,3 +5,5 @@ export declare function getCodePointLength(s: string): i32
 export declare function getSegmentLength(s: string): i32
  
 
+
+
